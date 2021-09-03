@@ -10,7 +10,7 @@ Simply run the bash script:
 
 # Features
 
-- Usage of environment variables CATALINA_HOME & CATALINA_BASE
+- Use of environment variables CATALINA_HOME & CATALINA_BASE
 - Provide your Tomcat application context
 - Support location containing whitespaces
 
@@ -19,8 +19,10 @@ NOTE: This will only give the output of the audit points. Manual check of the ou
 # TODOs
 
 - Improve user/user group rights check (it's currently failing if hard-coded names not matching)
-- Provide output in a parsable format (e.g. JSON)
 - Give more context output on:
   - What is checked
   - What check passed
   - What check failed
+  - Provide information on manual tests
+- Option to set output location
+- Provide output in a parsable format (e.g. JSON)
