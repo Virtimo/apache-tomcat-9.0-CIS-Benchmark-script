@@ -1,8 +1,43 @@
 #!/usr/bin/env bash
-
 set -o pipefail
 
+help() {
+  # Display Help
+  echo "Apache Tomcat 9.0 Security Benchmark Tests Report."
+  echo
+  echo "Syntax: Apache-Tomcat-9.0.sh [OPTIONS]"
+  echo "OPTIONS:"
+  echo "    -f FILE     Stores report output in the given file location."
+  echo
+}
+
+VERSION="0.0.3"
 OUTPUT_FILE="Apache_Tomcat_9.0.txt"
+
+options=":hfv"
+while getopts ${options} option; do
+  case $option in
+  h) # display Help
+    help
+    exit 1
+    ;;
+  f) # Redirect output
+    OUTPUT_FILE=$OPTARG
+    ;;
+  v) # Version output
+    echo "Apache-Tomcat-9.0 - Security Benchmark Tests Report"
+    echo "version: $VERSION"
+    echo "license: MIT License"
+    echo "website: https://github.com/Virtimo/apache-tomcat-9.0-CIS-Benchmark-script"
+    exit
+    ;;
+  \?) # Invalid option
+    echo "Error: Invalid option"
+    help
+    exit 1
+    ;;
+  esac
+done
 
 echo "##########################################"
 echo "Apache Tomcat 9.0 Security Benchmark Tests"
