@@ -34,7 +34,6 @@ Please open an issue or create a PR.
 
 # TODOs
 
-- Improve user/user group rights check (it's currently failing if hard-coded names not matching)
 - Give more context output on:
   - What is checked
   - What check passed
